@@ -58,3 +58,19 @@ h4{
     width:1000px
 
 }
+.btn{
+    background-color: rgb(158, 158, 158);
+    border-radius:5px 5px 5px 5px;
+    border: none;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.286);
+}
+.btn.active{
+    font-weight: bold;
+    background-color: white;
+    box-shadow:  0px 0px 2px 0px rgba(0, 0, 0, 0.179);
+}
