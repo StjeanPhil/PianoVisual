@@ -17,13 +17,26 @@ let setKeys=(p)=>{
             toAdd[i].onclick=()=>{selectKey(key)}
         }
     }
+    document.getElementById("plusPitch").onclick=()=>{
+       let idx=pitch.indexOf(currentKey)
+       currentKey=pitch[(idx+1)%12]
+       document.getElementById("currentPitch").innerHTML=currentKey
+    }
+    document.getElementById("minusPitch").onclick=()=>{
+       let idx=pitch.indexOf(currentKey)
+       if (idx==0){idx=12}
+       currentKey=pitch[(idx-1)%12]
+       document.getElementById("currentPitch").innerHTML=currentKey
+    }
 }
 
 //Selection from user
 let selectKey=(key)=>{
     console.log(key)
     currentKey=key
-    updateCurrent(currentScale,currentKey)
+
+    document.getElementById("currentPitch").innerHTML=key
+
 }
 let selectScale=(scale)=>{
     console.log(scale)
@@ -34,17 +47,10 @@ let selectScale=(scale)=>{
 
     curr=document.getElementsByClassName(scale)
     curr[0].classList.add("active")
-    updateCurrent(currentScale,currentKey)
-}
-//Update the model from the ui
-let updateCurrent=(scale,key)=>{
-    current=[scale,key]
-    currentlyShowing=document.getElementById("currentScaleKey")
-    currentlyShowing.innerHTML=key+scale
 
-    //if(scale!='' && key!=''){showKeys(scale,key)}
 
 }
+
 const safesetKeys=()=>{
     showKeys(currentScale,currentKey)
 }

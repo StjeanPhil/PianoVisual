@@ -37,16 +37,32 @@
         <div class="key white b"></div>
     </div>
     <div  id="menu">
-        <div class="scale">        
-            <p>Choose your scale:</p>
-            <button class="btn major active" onclick="selectScale('major')">Major</button>
-            <button class="btn minor" onclick="selectScale('minor')">Minor</button>
-            <button onclick="refreshKeys()">refresh</button>
+        
+        
+        <div class="scale panel">
+            <p>Scale :</p>
+            <div class="scalechoices">
+                <button class="btn major active" onclick="selectScale('major')">Major</button>
+                <button class="btn minor" onclick="selectScale('minor')">Minor</button>
+            </div>
         </div>
-        <p>Select a key on the keyboard to select show the selected scale at that key.</p>
-        <p>Current:<span id="currentScaleKey"></span></p>
-        <button class="btn refresh" onclick="refreshKeys()">Reset</button>
-        <button  class="btn set" onclick="safesetKeys()">Set</button>
+        <div class="pitch panel">
+            <p>Current Key :</p>
+            <div class="pitchChoices">
+                <div id="currentPitch" class="btn">A</div>
+                <div>
+                    <div class="btn half" id="plusPitch">+</div>
+                    <div class="btn half" id="minusPitch">-</div>
+                </div>
+            </div>
+        </div>
+        <div class="setter panel">
+            <p></p>
+            <button class="btn reset" onclick="refreshKeys()">Reset</button>
+            <button  class="btn set" onclick="safesetKeys()">Set</button>
+        </div>
+
+    
     </div>
     <script src="script.js"></script>
 </body>

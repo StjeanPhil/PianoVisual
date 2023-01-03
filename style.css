@@ -52,13 +52,27 @@ h4{
 #menu{
     text-align: center;
     margin:auto;
+    padding:30px;
     background-color: rgb(62, 59, 59);
     border-radius: 10px;
-    height: 10em;
+    display:flex ;
     width:1000px
+}
+.panel{
+    
+    width: 30%;
+    margin: auto;
+
+}
+
+#currentPitch{
+    text-align: center;
+font-size: 18px;
+    padding:22px;
 
 }
 .btn{
+    float: left;
     background-color: rgb(158, 158, 158);
     border-radius:5px 5px 5px 5px;
     border: none;
@@ -68,6 +82,16 @@ h4{
     font-size: 16px;
     font-weight: normal;
     box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.286);
+    margin: 3px;
+}
+.half{
+    margin-bottom:0px;
+    height: 28px;
+}
+.btn:active{
+    font-weight: bold;
+
+    box-shadow:  0px 0px 2px 0px rgba(0, 0, 0, 0.179);
 }
 .btn.active{
     font-weight: bold;
