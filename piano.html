@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Keys</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h4> Piano Scale </h4>
+    <div id="piano">
+        <div class="key spacer"></div>
+        <div class="key white c"></div>
+        <div class="key black csharp"></div>
+        <div class="key white d"></div>
+        <div class="key black dsharp"></div>
+        <div class="key white e"></div>
+        <div class="key white f"></div>
+        <div class="key black fsharp"></div>
+        <div class="key white g"></div>
+        <div class="key black gsharp"></div>
+        <div class="key white a"></div>
+        <div class="key black asharp"></div>
+        <div class="key white b"></div>
+        <div class="key white c"></div>
+        <div class="key black csharp"></div>
+        <div class="key white d"></div>
+        <div class="key black dsharp"></div>
+        <div class="key white e"></div>
+        <div class="key white f"></div>
+        <div class="key black fsharp"></div>
+        <div class="key white g"></div>
+        <div class="key black gsharp"></div>
+        <div class="key white a"></div>
+        <div class="key black asharp"></div>
+        <div class="key white b"></div>
+    </div>
+    <div  id="menu">
+        <div class="scale">        
+            <p>Choose your scale:</p>
+            <button class="scale-choice major" onclick="selectScale('major')">Major</button>
+            <button class="scale-choice minor" onclick="selectScale('minor')">Minor</button>
+            <button onclick="refreshKeys()">refresh</button>
+        </div>
+        <p>Select a key on the keyboard to select show the selected scale at that key.</p>
+        <p>Current:<span id="currentScaleKey"></span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
