@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h4> Piano Scale </h4>
+    <h4> Piano Theory Visualization </h4>
     <div id="piano">
         <div class="key spacer"></div>
         <div class="key white c"></div>
@@ -33,12 +33,10 @@
         <div class="key white g"></div>
         <div class="key black gsharp"></div>
         <div class="key white a"></div>
-        <div class="key black asharp"></div>
-        <div class="key white b"></div>
+        <div class="key black asharp "></div>
+        <div class="key white b "></div>
     </div>
-    <div  id="menu">
-        
-        
+    <div  id="menu">        
         <div class="scale panel">
             <p>Scale :</p>
             <div class="scalechoices">
@@ -49,20 +47,29 @@
         <div class="pitch panel">
             <p>Current Key :</p>
             <div class="pitchChoices">
-                <div id="currentPitch" class="btn">A</div>
+                <div id="currentPitch" class="btn">a</div>
                 <div>
                     <div class="btn half" id="plusPitch">+</div>
                     <div class="btn half" id="minusPitch">-</div>
                 </div>
             </div>
         </div>
-        <div class="setter panel">
-            <p></p>
-            <button class="btn reset" onclick="refreshKeys()">Reset</button>
-            <button  class="btn set" onclick="safesetKeys()">Set</button>
+        <div id="chords" class="">
+            <p>Chords :</p>
+            <button id="i"class="btn i" onclick="showChord(1)">i</button>
+            <button id="ii"class="btn ii" onclick="showChord(2)">ii</button>
+            <button id="iii"class="btn iii" onclick="showChord(3)">iii</button>            
+            <button id="iv"class="btn iv" onclick="showChord(4)">iv</button>
+            <button id="v"class="btn v" onclick="showChord(5)">v</button> 
+            <button id="vi"class="btn vi" onclick="showChord(6)">vi</button>
+            <button id="vii"class="btn vii" onclick="showChord(7)">vii</button>
         </div>
-
-    
+        <div class="setter panel">
+            <p>Submit :   </p>
+            <button id="set" class="btn" >Set</button>
+            <button class="btn" id="reset" >Reset</button>
+            
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
