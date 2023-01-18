@@ -10,31 +10,34 @@
 <body>
     <h4> Piano Theory Visualization </h4>
     <div id="piano">
-        <div class="key spacer"></div>
-        <div class="key white c"></div>
-        <div class="key black csharp"></div>
-        <div class="key white d"></div>
-        <div class="key black dsharp"></div>
-        <div class="key white e"></div>
-        <div class="key white f"></div>
-        <div class="key black fsharp"></div>
-        <div class="key white g"></div>
-        <div class="key black gsharp"></div>
-        <div class="key white a"></div>
-        <div class="key black asharp"></div>
-        <div class="key white b"></div>
-        <div class="key white c"></div>
-        <div class="key black csharp"></div>
-        <div class="key white d"></div>
-        <div class="key black dsharp"></div>
-        <div class="key white e"></div>
-        <div class="key white f"></div>
-        <div class="key black fsharp"></div>
-        <div class="key white g"></div>
-        <div class="key black gsharp"></div>
-        <div class="key white a"></div>
-        <div class="key black asharp "></div>
-        <div class="key white b "></div>
+
+        <div class="key white c"><p>C</p></div>
+        <div class="key black csharp"><p>C#</p></div>
+        <div class="key white d"><p>D</p></div>
+        <div class="key black dsharp"><p>D#</p></div>
+        <div class="key white e"><p>E</p></div>
+        <div class="key white f"><p>F</p></div>
+        <div class="key black fsharp"><p>F#</p></div>
+        <div class="key white g"><p>G</p></div>
+        <div class="key black gsharp"><p>G#</p></div>
+        <div class="key white a"><p>A</p></div>
+        <div class="key black asharp"><p>A#</p></div>
+        <div class="key white b"><p>B</p></div>
+        <div class="key white c"><p>C</p></div>
+        <div class="key black csharp"><p>C#</p></div>
+        <div class="key white d"><p>D</p></div>
+        <div class="key black dsharp"><p>D#</p></div>
+        <div class="key white e"><p>E</p></div>
+        <div class="key white f"><p>F</p></div>
+        <div class="key black fsharp"><p>F#</p></div>
+        <div class="key white g"><p>G</p></div>
+        <div class="key black gsharp"><p>G#</p></div>
+        <div class="key white a"><p>A</p></div>
+        <div class="key black asharp"><p>A#</p></div>
+        <div class="key white b"><p>B</p></div>
+        
+
+
     </div>
     <div  id="menu">        
         <div class="scale panel">
@@ -47,7 +50,7 @@
         <div class="pitch panel">
             <p>Current Key :</p>
             <div class="pitchChoices">
-                <div id="currentPitch" class="btn">a</div>
+                <div id="currentPitch" class="btn">C</div>
                 <div>
                     <div class="btn half" id="plusPitch">+</div>
                     <div class="btn half" id="minusPitch">-</div>
@@ -56,20 +59,18 @@
         </div>
         <div id="chords" class="">
             <p>Chords :</p>
-            <button id="i"class="btn i" onclick="showChord(1)">i</button>
-            <button id="ii"class="btn ii" onclick="showChord(2)">ii</button>
-            <button id="iii"class="btn iii" onclick="showChord(3)">iii</button>            
-            <button id="iv"class="btn iv" onclick="showChord(4)">iv</button>
-            <button id="v"class="btn v" onclick="showChord(5)">v</button> 
-            <button id="vi"class="btn vi" onclick="showChord(6)">vi</button>
-            <button id="vii"class="btn vii" onclick="showChord(7)">vii</button>
+            <button id="i"class="btn" onclick="showChord(1)">i</button>
+            <button id="ii"class="btn" onclick="showChord(2)">ii</button>
+            <button id="iii"class="btn" onclick="showChord(3)">iii</button>            
+            <button id="iv"class="btn" onclick="showChord(4)">iv</button>
+            <button id="v"class="btn" onclick="showChord(5)">v</button> 
+            <button id="vi"class="btn" onclick="showChord(6)">vi</button>
+            <button id="vii"class="btn" onclick="showChord(7)">vii</button>
         </div>
         <div class="setter panel">
-            <p>Submit :   </p>
-            <button id="set" class="btn" >Set</button>
+
             <button class="btn" id="reset" >Reset</button>
-            
-        </div>
+
     </div>
     <script src="script.js"></script>
 </body>

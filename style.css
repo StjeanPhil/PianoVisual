@@ -1,17 +1,19 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Lucida Sans';
 }
 body{
-    background: #222;
+    background: rgb(70, 70, 70);
 }
 h4{
     width: max-content;
     margin:auto;
     text-align:center;
     font-size: 3em;
-    background-color: rgb(62, 59, 59);
+    color: rgb(20, 20, 20);
     border-radius: 10px;
+
 }
 
 .key{
@@ -19,7 +21,20 @@ h4{
     float:left;
     border-radius:5px 5px 5px 5px;
     border:1px solid #000;
+
     
+}
+.key>p{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+.white>p{
+    color:black
+}
+.black>p{
+    color:antiquewhite;
+
 }
 
 .white{
@@ -28,6 +43,8 @@ h4{
     margin:1em 0 -1em -1em;
     z-index:1;
     background-color: white;
+    
+
 }
 .f,.c{
     margin:1em 0 0 0;
@@ -61,12 +78,13 @@ h4{
     width:1000px
 }
 .panel{
-    
     width: 30%;
-
     margin: auto;
-
-    
+    align-items: center;
+}
+p{
+    width: 100%;
+    font-weight: 900;
 
 }
 

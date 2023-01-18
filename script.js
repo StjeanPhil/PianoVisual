@@ -9,69 +9,77 @@ const scales={
     'minor':[2,1,2,2,1,2,2]
 }
 
-let setKeys=(p)=>{
-    for(var idx in p){
-        let key=p[idx]
+//Start the page
+const init=()=>{
+    //Add Onclick to the keys
+    for(var idx in pitch){
+        let key=pitch[idx]
         toAdd=document.getElementsByClassName(key)
         for(var i=0; i<toAdd.length;i++){
             toAdd[i].onclick=()=>{selectKey(key)}
         }
     }
+    //Add onClick for the +/- pitch
     document.getElementById("plusPitch").onclick=()=>{
-       let idx=pitch.indexOf(currentKey)
-       currentKey=pitch[(idx+1)%12]
-       document.getElementById("currentPitch").innerHTML=currentKey
+        let idx=pitch.indexOf(currentKey)
+        selectKey(pitch[(idx+1)%12])
     }
     document.getElementById("minusPitch").onclick=()=>{
-       let idx=pitch.indexOf(currentKey)
-       if (idx==0){idx=12}
-       currentKey=pitch[(idx-1)%12]
-       document.getElementById("currentPitch").innerHTML=currentKey
+        let idx=pitch.indexOf(currentKey)
+        if (idx==0){idx=12}
+        selectKey(pitch[(idx-1)%12])
     }
-    
-    document.getElementById("set").onclick = ()=>{showKeys(currentScale,currentKey)}
+    //Add the reset function ability
     document.getElementById("reset").onclick=refreshKeys
 }
 
-//Selection from user
+//Change current key for prop Key
 let selectKey=(key)=>{
-    console.log(key)
     currentKey=key
-
-    document.getElementById("currentPitch").innerHTML=key
+    //Change the UI
+    document.getElementById("currentPitch").innerHTML=key.toUpperCase()
+    //Make changes to piano
+    showKeys(currentScale,currentKey)
 
 }
+//Change current scale for prop scale
 let selectScale=(scale)=>{
-    console.log(scale)
     currentScale=scale
-
+    //Remove currently active scale button from UI
     prev=document.getElementsByClassName("active")
     prev[0].classList.remove("active")
-
+    //Active the clicked scale button from UI
     curr=document.getElementsByClassName(scale)
     curr[0].classList.add("active")
+    //Make changes to piano
+    showKeys(currentScale,currentKey)
 }
+
 // flash the notes from the chord with the right number from the roman numeral notations
 const showChord=(n)=>{
+    //Reset the piano
     refreshChord()
+    //Active the right chord btn
     showActiveChordBtn(n)
+    //
     nb=n
     let idx = pitch.indexOf(currentKey)
     let max=idx+12
-
+    // Add Piano keys to the chords, keys need to be space 1 note apart and be in the same scale, 
     for(var x=0;x<24;x++){
         elems=document.getElementsByClassName(pitch[(x+idx)%12])
-        console.log(pitch[(x+idx)%12])
-        console.log(elems[0].classList.contains("inScale"))
-        console.log(nb)
+        //Verify the current note is in scale
         if (elems[0].classList.contains("inScale")){
             nb-=1
+            //Spaced out correctly
             if (nb==0 || nb==-2 ||nb==-4){
                 elems[(x+idx>=12?1:0)].classList.add("inChord")
             }
         }
     }  
+    
 }
+
 const showActiveChordBtn=(n)=>{
     var elems=document.getElementsByClassName("activeChord")
     if (elems.length>0 ){elems[0].classList.remove("activeChord")}
@@ -133,11 +141,7 @@ const refreshChord=()=>{
     var elems=document.getElementsByClassName("activeChord")
     if (elems.length>0 ){elems[0].classList.remove("activeChord")}
 }
-//Start the page
-const init=()=>{
-    setKeys(pitch)
-    console.log("done init") 
-}
+
 
 
 //Main
